@@ -1,27 +1,4 @@
-function copyingText(message, data=[]) {
-    const now = new Date();
-    // No seconds, 24-hour format
-    const formatted = now.toLocaleString("en-GB", {
-      timeZone: "America/Toronto",  // adjust if needed
-      hour12: false,
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-    const timestamp = `${formatted} GMT-5 Abhinav Singh:`;
-    const textToCopy = `${timestamp} ${message}`;
-    
-    const tempTextArea = document.createElement("textarea");
-    tempTextArea.value = textToCopy;
-    document.body.appendChild(tempTextArea);
-    tempTextArea.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempTextArea);
-  }
-  
-  // Main items
+function callAllDom(){
   const morgue = document.getElementById("morgue");
   const panic = document.getElementById("panic");
   const doorAccess = document.getElementById("doorAccess");
@@ -60,13 +37,43 @@ function copyingText(message, data=[]) {
   const remarksGe = document.getElementById("remarksGe");
 
   const buttonList = [
-  morgue, panic, doorAccess, codeLine, nc, biomed, humberIt, ge,
-  toiletClogged, lights, lightsDark, agv, aprActivate, aprDeactivate,
-  aprAlarming, trash1, trash2, trashAll, linen1, linen2, linenAll,
-  terminalClean, tooCold, tooHot, remarksSecurity, remarksSupportServices, remarksCode,
-  remarksHrhIt, remarksBiomed, remarksAssignedJciGen, remarksNotifiedJciGen,
-  remarksJciIt, remarksTemp, remarksGe,
-];
+    morgue, panic, doorAccess, codeLine, nc, biomed, humberIt, ge,
+    toiletClogged, lights, lightsDark, agv, aprActivate, aprDeactivate,
+    aprAlarming, trash1, trash2, trashAll, linen1, linen2, linenAll,
+    terminalClean, tooCold, tooHot, remarksSecurity, remarksSupportServices, remarksCode,
+    remarksHrhIt, remarksBiomed, remarksAssignedJciGen, remarksNotifiedJciGen,
+    remarksJciIt, remarksTemp, remarksGe,
+  ];
+
+  return buttonList;
+}
+
+const buttonList = callAllDom();
+
+function copyingText(message, data=[]) {
+    const now = new Date();
+    // No seconds, 24-hour format
+    const formatted = now.toLocaleString("en-GB", {
+      timeZone: "America/Toronto",  // adjust if needed
+      hour12: false,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+    const timestamp = `${formatted} GMT-5 Abhinav Singh:`;
+    const textToCopy = `${timestamp} ${message}`;
+    
+    const tempTextArea = document.createElement("textarea");
+    tempTextArea.value = textToCopy;
+    document.body.appendChild(tempTextArea);
+    tempTextArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempTextArea);
+  }
+  
+  
   
   const scripts = {
 	morgue: "Security assistance is required for 10-12 external. Please attend and thank you.",
