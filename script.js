@@ -1,6 +1,4 @@
-// === Templates (unchanged) ===
 const scripts = {
-	/* ... keep your templates exactly as before ... */
 	morgue: "Security assistance is required for 10-12 external. Please attend and thank you.",
 	panic: "Panic Alarm\n",
 	doorAccess: "Security assistance is required for door access at the given location. Please attend and thank you.\n- Please call CONTACT if required.",
@@ -15,7 +13,6 @@ const scripts = {
 	terminalClean: "Please attend and complete the follwing cleaning request. The details are mentioned below:\nCleaning Type: \nDate Requested: \nTime Requested: \nType of work completed: \nExtension/Contact: ",
 	tooCold: "The caller is reporting it is too cold at the given location. Please attend and adjust the temperature. If more information is required you can contact them at extension/phone number CONTACT. Thank you. ",
 	tooHot: "The caller is reporting it is too hot at the given location. Please attend and adjust the temperature. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
-	// Remarks
 	remarksCode: "Code was annouced overhead twice as, 'Code'.",
 	remarksSupportServices: "Event assigned to Support Services",
 	remarksSecurity: "Event assigned to Security Department.",
