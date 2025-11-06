@@ -47,7 +47,6 @@ function callAllDom(){
 
   return buttonList;
 }
-
 const buttonList = callAllDom();
 
 function copyingText(message, data=[]) {
@@ -104,6 +103,4 @@ function copyingText(message, data=[]) {
 	remarksGe: "Called GE. Reference number is: ",
 }
   
-  buttonList.forEach(item => {
-    item.onclick = () => { copyingText(scripts[item.id]) }
-  });
+buttonList.forEach(item => {item.onclick = () => { copyingText(scripts[item.id])}});
