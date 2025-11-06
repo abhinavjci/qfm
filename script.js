@@ -47,8 +47,8 @@
 
 //   return buttonList;
 // }
-const buttonList = callAllDom();
 
+console.log("Testing 92453");
 function copyingText(message, data=[]) {
     const now = new Date();
     // No seconds, 24-hour format
