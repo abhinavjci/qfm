@@ -1,5 +1,5 @@
 import copyingText from "./functions/copyingText.js";
-import { extensionOnly } from "./functions/extensionOnly.js";
+import { extensionOnly, nameOnly, terminalClean } from "./functions/promptFunctions.js";
 
 console.log("Update: 095412");
   
@@ -15,7 +15,7 @@ const scripts = {
 	toiletClogged: "Caller has reported a clogged toilet at the given location. Please attend and thank you.\n- Please call CONTACT if required.",
 	lights: "Caller has reported lights not working at the given location. Alternate lights are present, so, the room is not completely dark. Please attend and thank you.\n- Please call CONTACT if required.",
 	lightsDark: "Caller has reported lights not working at the given location. The room is completely dark. Please attend and thank you.\n- Please call CONTACT if required",
-	terminalClean: "Please attend and complete the follwing cleaning request. The details are mentioned below:\nCleaning Type: \nDate Requested: \nTime Requested: \nType of work completed: \nExtension/Contact: ",
+	terminalClean: "Please attend and complete the follwing cleaning request. The details are mentioned below:\nCleaning Type: CT\nDate Requested: DR\nTime Requested: TR\nType of work completed: TW\nExtension/Contact: EC",
 	tooCold: "The caller is reporting it is too cold at the given location. Please attend and adjust the temperature. If more information is required you can contact them at extension/phone number CONTACT. Thank you. ",
 	tooHot: "The caller is reporting it is too hot at the given location. Please attend and adjust the temperature. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
 	
@@ -28,17 +28,27 @@ const scripts = {
 	remarksAssignedJciGen: "Assigned to PERSON.\nRoom(s) affected: \nIs the room still in use? \nWork performed: \nRoot cause: \nSerial/Make/Model (if applicable): ",
 	remarksNotifiedJciGen: "Notified PERSON.\nRoom(s) affected: \nIs the room still in use? \nWork performed: \nRoot cause: \nSerial/Make/Model (if applicable): ",
 	remarksJciIt: "Assigned to JCI IT.\nRoom(s) affected: \nIs the room still in use? \nWork performed: \nRoot cause: \nSerial/Make/Model (if applicable): ",
-	remarksTemp: "Assigned to PERSON.\nRDS Range: \nCurrent Room Setpoint: \nCurrent Room Temperature: \nAdjustment(s) Made: \nAdditional Comments: ",
-	remarksGe: "Called GE. Reference number is: ",
+	remarksTemp: "Assigned to PERSON.\nRDS Range: RANGE\nCurrent Room Setpoint: \nCurrent Room Temperature: \nAdjustment(s) Made: \nAdditional Comments: ",
+	remarksGe: "Called GE. Reference number is: RN",
 }
   
 document.querySelectorAll('.item').forEach(item => {
   item.onclick = () => { 
     const allowedExtensionOnly = ["doorAccess", "tooHot", "tooCold", "toiletClogged", "lights", "lightsDark"];
 
+	const allowedNameOnly = ["remarksAssignedJciGen", "remarksNotifiedJciGen", "remarksTemp"];
+
     if (allowedExtensionOnly.includes(item.id)) {
-      extensionOnly(item.id);
+      extensionOnly(scripts[item.id]);
     }
+
+	else if (allowedNameOnly.includes(item.id)) {
+		nameOnly(scripts[item.id], item.id)
+	}
+
+	else if (item.id == 'terminalClean') {
+		terminalClean(scripts[item.id]);
+	}
 
     else { copyingText(scripts[item.id]); }
   }
