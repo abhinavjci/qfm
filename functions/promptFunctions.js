@@ -9,13 +9,10 @@ export function extensionOnly(script) {
 
 export function nameOnly(script, id) {
     const name = prompt("Person Attending: ");
-    let newScript = script;
-    if (id == "remarksTemp") {
-        console.log(id)
-        const range = prompt("Range: ");
-        newScript = allScripts[id].replace('RANGE', range);
-    }
-    newScript = newScript.replace('PERSON', name);
+    let newScript = script.replace('PERSON', name);
+    let range = null
+    if (id == "remarksTemp") { console.log(id); range = prompt("Enter Range: "); }
+    newScript = newScript.replace('RGE', range);
     copyingText(newScript);
 }
 

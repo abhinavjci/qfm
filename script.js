@@ -20,6 +20,7 @@ document.querySelectorAll('.item').forEach(item => {
 		terminalClean(allScripts[item.id]);
 	}
 
-    else { copyingText(allScripts[item.id]); }
+  else { copyingText(allScripts[item.id]); }
+
   }
 });

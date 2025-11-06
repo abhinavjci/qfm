@@ -1,5 +1,4 @@
 export default function copyingText(message) {
-  console.log("Copying Text");
   const now = new Date();
   const formatted = now.toLocaleString("en-GB", {
     timeZone: "America/Toronto", 
@@ -12,11 +11,13 @@ export default function copyingText(message) {
   });
   const timestamp = `${formatted} GMT-5 Abhinav Singh:`;
   const textToCopy = `${timestamp} ${message}`;
-  
   const tempTextArea = document.createElement("textarea");
   tempTextArea.value = textToCopy;
   document.body.appendChild(tempTextArea);
   tempTextArea.select();
   document.execCommand("copy");
   document.body.removeChild(tempTextArea);
+
+  try { navigator.clipboard.writeText(textToCopy); }
+  catch (e) { console.log (e); }
 }
