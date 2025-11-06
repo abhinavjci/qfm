@@ -1,4 +1,5 @@
 import copyingText from "./copyingText.js";
+import allScripts from "./allScripts.js";
 
 export function extensionOnly(script) {
     const extension = prompt("Extension: ");
@@ -8,12 +9,13 @@ export function extensionOnly(script) {
 
 export function nameOnly(script, id) {
     const name = prompt("Person Attending: ");
-    let newScript = script.replace('PERSON', name);
+    let newScript = script;
     if (id == "remarksTemp") {
         console.log(id)
         const range = prompt("Range: ");
-        newScript = newScript.replace('RANGE', range);
+        newScript = allScripts[id].replace('RANGE', range);
     }
+    newScript = newScript.replace('PERSON', name);
     copyingText(newScript);
 }
 
