@@ -1,8 +1,7 @@
-export default function copyingText(message, data=[]) {
+export default function copyingText(message) {
     const now = new Date();
-    // No seconds, 24-hour format
     const formatted = now.toLocaleString("en-GB", {
-      timeZone: "America/Toronto",  // adjust if needed
+      timeZone: "America/Toronto", 
       hour12: false,
       year: "numeric",
       month: "2-digit",

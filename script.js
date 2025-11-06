@@ -1,4 +1,6 @@
 import copyingText from "./functions/copyingText.js";
+import { extensionOnly } from "./functions/extensionOnly.js";
+
 console.log("Update: 095412");
   
 const scripts = {
@@ -30,4 +32,15 @@ const scripts = {
 	remarksGe: "Called GE. Reference number is: ",
 }
   
-document.querySelectorAll('.item').forEach(item => {item.onclick = () => { copyingText(scripts[item.id])}});
+document.querySelectorAll('.item').forEach(item => {
+  item.onclick = () => { 
+    console.log(item.id);
+
+    if (item.id ==  "doorAccess") {
+      console.log("I am here");
+      extensionOnly(scripts[item.id]);
+    }
+
+    else { copyingText(scripts[item.id]); }
+  }
+});
