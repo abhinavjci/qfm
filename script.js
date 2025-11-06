@@ -36,8 +36,7 @@ document.querySelectorAll('.item').forEach(item => {
   item.onclick = () => { 
     console.log(item.id);
 
-    if (item.id ==  "doorAccess") {
-      console.log("I am here");
+    if (item.id ==  "doorAccess", "tooHot", "tooCold") {
       extensionOnly(scripts[item.id]);
     }
 
