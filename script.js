@@ -1,52 +1,52 @@
-function callAllDom(){
-  const morgue = document.getElementById("morgue");
-  const panic = document.getElementById("panic");
-  const doorAccess = document.getElementById("doorAccess");
-  const codeLine = document.getElementById("codeLine");
-  const nc = document.getElementById("nc");
-  const biomed = document.getElementById("biomed");
-  const humberIt = document.getElementById("humberIt");
-  const ge = document.getElementById("ge");
-  const toiletClogged = document.getElementById("toiletClogged");
-  const lights = document.getElementById("lights");
-  const lightsDark = document.getElementById("lightsDark");
-  const agv = document.getElementById("agv");
-  const aprActivate = document.getElementById("aprActivate");
-  const aprDeactivate = document.getElementById("aprDeactivate");
-  const aprAlarming = document.getElementById("aprAlarming");
-  const trash1 = document.getElementById("trash1");
-  const trash2 = document.getElementById("trash2");
-  const trashAll = document.getElementById("trashAll");
-  const linen1 = document.getElementById("linen1");
-  const linen2 = document.getElementById("linen2");
-  const linenAll = document.getElementById("linenAll");
-  const terminalClean = document.getElementById("terminalClean");
-  const tooCold = document.getElementById("tooCold");
-  const tooHot = document.getElementById("tooHot");
+// function callAllDom(){
+//   const morgue = document.getElementById("morgue");
+//   const panic = document.getElementById("panic");
+//   const doorAccess = document.getElementById("doorAccess");
+//   const codeLine = document.getElementById("codeLine");
+//   const nc = document.getElementById("nc");
+//   const biomed = document.getElementById("biomed");
+//   const humberIt = document.getElementById("humberIt");
+//   const ge = document.getElementById("ge");
+//   const toiletClogged = document.getElementById("toiletClogged");
+//   const lights = document.getElementById("lights");
+//   const lightsDark = document.getElementById("lightsDark");
+//   const agv = document.getElementById("agv");
+//   const aprActivate = document.getElementById("aprActivate");
+//   const aprDeactivate = document.getElementById("aprDeactivate");
+//   const aprAlarming = document.getElementById("aprAlarming");
+//   const trash1 = document.getElementById("trash1");
+//   const trash2 = document.getElementById("trash2");
+//   const trashAll = document.getElementById("trashAll");
+//   const linen1 = document.getElementById("linen1");
+//   const linen2 = document.getElementById("linen2");
+//   const linenAll = document.getElementById("linenAll");
+//   const terminalClean = document.getElementById("terminalClean");
+//   const tooCold = document.getElementById("tooCold");
+//   const tooHot = document.getElementById("tooHot");
 
-  // Remarks section
-  const remarksSecurity = document.getElementById("remarksSecurity");
-  const remarksSupportServices = document.getElementById("remarksSupportServices");
-  const remarksCode = document.getElementById("remarksCode");
-  const remarksHrhIt = document.getElementById("remarksHrhIt");
-  const remarksBiomed = document.getElementById("remarksBiomed");
-  const remarksAssignedJciGen = document.getElementById("remarksAssignedJciGen");
-  const remarksNotifiedJciGen = document.getElementById("remarksNotifiedJciGen");
-  const remarksJciIt = document.getElementById("remarksJciIt");
-  const remarksTemp = document.getElementById("remarksTemp");
-  const remarksGe = document.getElementById("remarksGe");
+//   // Remarks section
+//   const remarksSecurity = document.getElementById("remarksSecurity");
+//   const remarksSupportServices = document.getElementById("remarksSupportServices");
+//   const remarksCode = document.getElementById("remarksCode");
+//   const remarksHrhIt = document.getElementById("remarksHrhIt");
+//   const remarksBiomed = document.getElementById("remarksBiomed");
+//   const remarksAssignedJciGen = document.getElementById("remarksAssignedJciGen");
+//   const remarksNotifiedJciGen = document.getElementById("remarksNotifiedJciGen");
+//   const remarksJciIt = document.getElementById("remarksJciIt");
+//   const remarksTemp = document.getElementById("remarksTemp");
+//   const remarksGe = document.getElementById("remarksGe");
 
-  const buttonList = [
-    morgue, panic, doorAccess, codeLine, nc, biomed, humberIt, ge,
-    toiletClogged, lights, lightsDark, agv, aprActivate, aprDeactivate,
-    aprAlarming, trash1, trash2, trashAll, linen1, linen2, linenAll,
-    terminalClean, tooCold, tooHot, remarksSecurity, remarksSupportServices, remarksCode,
-    remarksHrhIt, remarksBiomed, remarksAssignedJciGen, remarksNotifiedJciGen,
-    remarksJciIt, remarksTemp, remarksGe,
-  ];
+//   const buttonList = [
+//     morgue, panic, doorAccess, codeLine, nc, biomed, humberIt, ge,
+//     toiletClogged, lights, lightsDark, agv, aprActivate, aprDeactivate,
+//     aprAlarming, trash1, trash2, trashAll, linen1, linen2, linenAll,
+//     terminalClean, tooCold, tooHot, remarksSecurity, remarksSupportServices, remarksCode,
+//     remarksHrhIt, remarksBiomed, remarksAssignedJciGen, remarksNotifiedJciGen,
+//     remarksJciIt, remarksTemp, remarksGe,
+//   ];
 
-  return buttonList;
-}
+//   return buttonList;
+// }
 const buttonList = callAllDom();
 
 function copyingText(message, data=[]) {
@@ -103,4 +103,4 @@ function copyingText(message, data=[]) {
 	remarksGe: "Called GE. Reference number is: ",
 }
   
-buttonList.forEach(item => {item.onclick = () => { copyingText(scripts[item.id])}});
+document.querySelectorAll('.item').forEach(item => {item.onclick = () => { copyingText(scripts[item.id])}});
