@@ -11,7 +11,7 @@ const scripts = {
 	nc: "CDS has received a code on the nurse console. Details are as below:\n- Code Type: \n- Code Nomenclature: \n- Announcement: ",
 	biomed: "Caller is requesting Biomed to inspect/provide the following equipment/items. Please attend and thank you\n\nEquipment/Item Type: \nType of request: \nExtension/Contact: ",
 	humberIt: "Caller is requesting Humber IT to inspect/fix the following equipment(s) at the given location. Please attend and thank you.\n\nEquipment Name: \nEquipment ID (If Applicable): \nProblem/Issue: \nExtension/Contact: ",
-	ge: "Caller is requesting service for the GE equipment(s) at the given location. Detailsare as below:\nEquipment Type: \nEquipment ID: \nProblem/Issue: \nMachine Status: \nContact: ",
+	ge: "Caller is requesting service for the GE equipment(s) at the given location. Details are as below:\nEquipment Type: \nEquipment ID: \nProblem/Issue: \nMachine Status: \nContact: ",
 	toiletClogged: "Caller has reported a clogged toilet at the given location. Please attend and thank you.\n- Please call CONTACT if required.",
 	lights: "Caller has reported lights not working at the given location. Alternate lights are present, so, the room is not completely dark. Please attend and thank you.\n- Please call CONTACT if required.",
 	lightsDark: "Caller has reported lights not working at the given location. The room is completely dark. Please attend and thank you.\n- Please call CONTACT if required",
@@ -34,10 +34,10 @@ const scripts = {
   
 document.querySelectorAll('.item').forEach(item => {
   item.onclick = () => { 
-    console.log(item.id);
+    const allowedExtensionOnly = ["doorAccess", "tooHot", "tooCold", "toiletClogged", "lights", "lightsDark"];
 
-    if (item.id ==  "doorAccess", "tooHot", "tooCold") {
-      extensionOnly(scripts[item.id]);
+    if (allowedExtensionOnly.includes(item.id)) {
+      extensionOnly(item.id);
     }
 
     else { copyingText(scripts[item.id]); }
