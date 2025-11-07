@@ -12,15 +12,19 @@ document.querySelectorAll('.item').forEach(item => {
       extensionOnly(allScripts[item.id]);
     }
 
-	else if (allowedNameOnly.includes(item.id)) {
-		nameOnly(allScripts[item.id], item.id)
-	}
+	  else if (allowedNameOnly.includes(item.id)) {
+		  nameOnly(allScripts[item.id], item.id)
+	  }
 
-	else if (item.id == 'terminalClean') {
-		terminalClean(allScripts[item.id]);
-	}
+	  else if (item.id == 'terminalClean') {
+		  terminalClean(allScripts[item.id]);
+	  }
 
-  else { copyingText(allScripts[item.id]); }
+    else if (item.id == 'trash' || item.id == 'linen') {
+      
+    }
+
+    else { copyingText(allScripts[item.id]); }
 
   }
 });
