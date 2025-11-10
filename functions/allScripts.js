@@ -15,6 +15,8 @@ const allScripts = {
 	tooHot: "The caller is reporting it is too hot at the given location. Please attend and adjust the temperature. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
 	aprDeactivate: "The caller is requesting the negative pressure room to be deactivated at the given location. Please attend and complete this request. This is approved by IPAC. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
 	aprActivate: "The caller is requesting the negative pressure room to be activated at the given location. Please attend and complete this request. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
+	trash: "CDS TransVac monitor is showing trash risers WHICH disabled with low air velocity. Please attend and restore operation to risers WHICH. Thank you. ",
+	linen: "CDS TransVac monitor is showing linen risers WHICH disabled with low air velocity. Please attend and restore operation to risers WHICH. Thank you.",
 	
 	// Remarks
 	remarksCode: "Code was annouced overhead twice as, 'Code'.",

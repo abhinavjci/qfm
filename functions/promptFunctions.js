@@ -27,7 +27,7 @@ export function terminalClean(script) {
     const dateRequested = prompt("Date Requested: ");
     const timeRequested = prompt("Time Requested: ");
     const typeOfWork = prompt("Type of Work: ");
-    const contact = prompt("Contact: ", 51440);
+    const contact = prompt("Contact: ", 50000);
 
     let newScript = script.replace('CT', cleaningType);
     newScript = newScript.replace('DR', dateRequested);
@@ -35,6 +35,11 @@ export function terminalClean(script) {
     newScript = newScript.replace('TW', typeOfWork);
     newScript = newScript.replace('EC', contact);
 
-    console.log("This was called.");
+    copyingText(newScript);
+}
+
+export function trashLinen(script) {
+    const which = prompt("Which ones has issues (One/Two/One & Two): ");
+    let newScript = script.replace("WHICH", which);
     copyingText(newScript);
 }
