@@ -49,3 +49,15 @@ export function trashLinen(script) {
     }
     copyingText(newScript);
 }
+
+export function agv(script) {
+    const number = prompt("AGV Number: ");
+    const location = prompt("Location: ");
+    const errorMessage = prompt("Error Message(s): ");
+
+    let newScript = script.replace("NUMBER", number);
+    newScript = newScript.replace("LOC", location);
+    newScript = newScript.replace("ERR", errorMessage);
+
+    copyingText(newScript)
+}

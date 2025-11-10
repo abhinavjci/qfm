@@ -17,6 +17,7 @@ const allScripts = {
 	aprActivate: "The caller is requesting the negative pressure room to be activated at the given location. Please attend and complete this request. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
 	trash: "CDS TransVac monitor is showing trash risers WHICH disabled with low air velocity. Please attend and restore operation to risers WHICH. Thank you. ",
 	linen: "CDS TransVac monitor is showing linen risers WHICH disabled with low air velocity. Please attend and restore operation to risers WHICH. Thank you.",
+	agv: "The following AGV is in alarm. Details are below. Please attend and thank you.\n> AGV: NUMBER\n> Location: LOC\n> Error Message(s): ERR.",
 	
 	// Remarks
 	remarksCode: "Code was annouced overhead twice as, 'Code'.",
