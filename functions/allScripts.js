@@ -13,6 +13,8 @@ const allScripts = {
 	terminalClean: "Please attend and complete the follwing cleaning request. The details are mentioned below:\nCleaning Type: CT\nDate Requested: DR\nTime Requested: TR\nType of work completed: TW\nExtension/Contact: EC",
 	tooCold: "The caller is reporting it is too cold at the given location. Please attend and adjust the temperature. If more information is required you can contact them at extension/phone number CONTACT. Thank you. ",
 	tooHot: "The caller is reporting it is too hot at the given location. Please attend and adjust the temperature. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
+	aprDeactivate: "The caller is requesting the negative pressure room to be deactivated at the given location. Please attend and complete this request. This is approved by IPAC. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
+	aprActivate: "The caller is requesting the negative pressure room to be activated at the given location. Please attend and complete this request. If more information is required you can contact them at extension/phone number CONTACT. Thank you.",
 	
 	// Remarks
 	remarksCode: "Code was annouced overhead twice as, 'Code'.",
