@@ -41,5 +41,11 @@ export function terminalClean(script) {
 export function trashLinen(script) {
     const which = prompt("Which ones has issues (One/Two/One & Two): ");
     let newScript = script.replace("WHICH", which);
+    newScript = newScript.replace("WHICH", which); //Two times
+
+    if (which.toLowerCase() == "one" || which.toUpperCase() == "two") {
+        newScript = newScript.replace("risers", "riser");
+        newScript = newScript.replace("risers", "riser");
+    }
     copyingText(newScript);
 }
