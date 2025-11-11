@@ -4,8 +4,6 @@ const allScripts = {
 	doorAccess: "Security assistance is required for door access at the given location. Please attend and thank you.\n- Please call CONTACT if required.",
 	codeLine: "CDS has received a code on the Code Line. Details are as below:\n- Code Type: \n- Extension: \n- Announcement: ",
 	nc: "CDS has received a code on the nurse console. Details are as below:\n- Code Type: \n- Code Nomenclature: \n- Announcement: ",
-	biomed: "Caller is requesting Biomed to inspect/provide the following equipment/items. Please attend and thank you\n\nEquipment/Item Type: \nType of request: \nExtension/Contact: ",
-	humberIt: "Caller is requesting Humber IT to inspect/fix the following equipment(s) at the given location. Please attend and thank you.\n\nEquipment Name: \nEquipment ID (If Applicable): \nProblem/Issue: \nExtension/Contact: ",
 	ge: "Caller is requesting service for the GE equipment(s) at the given location. Details are as below:\nEquipment Type: \nEquipment ID: \nProblem/Issue: \nMachine Status: \nContact: ",
 	toiletClogged: "Caller has reported a clogged toilet at the given location. Please attend and thank you.\n- Please call CONTACT if required.",
 	lights: "Caller has reported lights not working at the given location. Alternate lights are present, so, the room is not completely dark. Please attend and thank you.\n- Please call CONTACT if required.",
@@ -19,6 +17,10 @@ const allScripts = {
 	linen: "CDS TransVac monitor is showing linen risers WHICH disabled with low air velocity. Please attend and restore operation to risers WHICH. Thank you.",
 	agv: "The following AGV is in alarm. Details are below. Please attend and thank you.\n> AGV: NUMBER\n> Location: LOC\n> Error Message(s): ERR.",
 	
+	// External Scripts (HRH Departments)
+	biomed: "Caller is requesting Biomed to inspect/provide the following equipment/items. Please attend and thank you\n\nEquipment/Item Type: EQUIP\nType of request: TOR\nExtension/Contact: CONTACT",
+	humberIt: "Caller is requesting Humber IT to inspect/fix the following equipment(s) at the given location. Please attend and thank you.\n\nEquipment Name: EQUIP\nEquipment ID (If Applicable): EQID\nProblem/Issue: TOR\nExtension/Contact: CONTACT",
+
 	// Remarks
 	remarksCode: "Code was annouced overhead twice as, 'Code'.",
 	remarksSupportServices: "Event assigned to Support Services",

@@ -1,5 +1,5 @@
 import copyingText from "./functions/copyingText.js";
-import { extensionOnly, nameOnly, terminalClean, trashLinen, agv } from "./functions/promptFunctions.js";
+import { extensionOnly, nameOnly, terminalClean, trashLinen, agv, externalDepartments } from "./functions/promptFunctions.js";
 import allScripts from "./functions/allScripts.js"
   
 document.querySelectorAll('.item').forEach(item => {
@@ -8,8 +8,14 @@ document.querySelectorAll('.item').forEach(item => {
 
     const allowedNameOnly = ["remarksAssignedJciGen", "remarksNotifiedJciGen", "remarksTemp"];
 
+    const allowedExternalDepartments = ["biomed", "humberIt"];
+
     if (allowedExtensionOnly.includes(item.id)) {
       extensionOnly(allScripts[item.id]);
+    }
+
+    else if (allowedExternalDepartments.includes(item.id)) {
+      externalDepartments(allScripts[item.id], item.id);
     }
 
     else if (allowedNameOnly.includes(item.id)) {

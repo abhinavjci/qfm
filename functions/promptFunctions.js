@@ -61,3 +61,17 @@ export function agv(script) {
 
     copyingText(newScript)
 }
+
+export function externalDepartments(script, id) {
+    const equipmentType = prompt("Equipment Type: ");
+    const typeOfRequest = prompt("Type of Request: ");
+    
+    let newScript = script.replace("EQUIP", equipmentType);
+    newScript = newScript.replace("TOR", typeOfRequest);
+    if (id == "humberIt") {
+        const equipmentId = prompt("Equipment ID: ", "NA");
+        newScript = newScript.replace("EQID", equipmentId);
+    }
+
+    extensionOnly(newScript);
+}
