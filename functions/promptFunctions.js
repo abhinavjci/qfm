@@ -105,6 +105,7 @@ export function alarmFormatter() {
         }
 
         let newScript = result.join('\n');
+        console.log(newScript);
         copyingText(newScript);
     });
 }
