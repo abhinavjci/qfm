@@ -1,5 +1,5 @@
 import copyingText from "./functions/copyingText.js";
-import { extensionOnly, nameOnly, terminalClean, trashLinen, agv, externalDepartments } from "./functions/promptFunctions.js";
+import { extensionOnly, nameOnly, terminalClean, trashLinen, agv, externalDepartments, alarmFormatter } from "./functions/promptFunctions.js";
 import allScripts from "./functions/allScripts.js"
   
 document.querySelectorAll('.item').forEach(item => {
@@ -32,6 +32,11 @@ document.querySelectorAll('.item').forEach(item => {
 
     else if (item.id == "agv") {
       agv(allScripts[item.id]);
+    }
+
+    if (item.id === "alarmFormatter") {
+        alarmFormatter();
+        return;
     }
     
     else { copyingText(allScripts[item.id]); }

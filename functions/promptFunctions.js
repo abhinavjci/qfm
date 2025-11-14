@@ -75,3 +75,36 @@ export function externalDepartments(script, id) {
 
     extensionOnly(newScript);
 }
+
+export function alarmFormatter() {
+    navigator.clipboard.readText().then(text => {
+        let textList = text.split('\n');
+
+        for (let i = textList.length - 1; i >= 0; i--) {
+            if (textList[i].trim() === "") textList.splice(i, 1);
+        }
+
+        let result = [];
+        for (let i = 0; i < textList.length; i++) {
+            let item = textList[i].trim();
+            let next = (textList[i + 1] || "").trim();
+
+            if (/Alarm$/i.test(item) && i + 1 < textList.length) {
+                if (/^\d+$/.test(next) || !next.endsWith(":")) {
+                    result.push(`${item} ${next}`);
+                    i++;
+                } else {
+                    result.push(item);
+                }
+            } else if (item.endsWith(":") && i + 1 < textList.length) {
+                result.push(`${item} ${next}`);
+                i++;
+            } else {
+                result.push(item);
+            }
+        }
+
+        let newScript = result.join('\n');
+        copyingText(newScript);
+    });
+}
