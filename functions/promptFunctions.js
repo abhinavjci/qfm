@@ -77,6 +77,7 @@ export function externalDepartments(script, id) {
 }
 
 export function alarmFormatter() {
+    // console.log("I am calling, my name is Alarm Formatter")
     navigator.clipboard.readText().then(text => {
         let textList = text.split('\n');
 
@@ -105,7 +106,6 @@ export function alarmFormatter() {
         }
 
         let newScript = result.join('\n');
-        console.log(newScript);
         copyingText(newScript);
     });
 }

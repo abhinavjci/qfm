@@ -34,9 +34,8 @@ document.querySelectorAll('.item').forEach(item => {
       agv(allScripts[item.id]);
     }
 
-    if (item.id === "alarmFormatter") {
+    else if (item.id === "alarmFormatter") {
         alarmFormatter();
-        return;
     }
     
     else { copyingText(allScripts[item.id]); }

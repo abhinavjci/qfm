@@ -17,7 +17,4 @@ export default function copyingText(message) {
   tempTextArea.select();
   document.execCommand("copy");
   document.body.removeChild(tempTextArea);
-
-  try { navigator.clipboard.writeText(textToCopy); }
-  catch (e) { console.log (e); }
 }
