@@ -1,6 +1,9 @@
 import copyingText from "./copyingText.js";
 import allScripts from "./allScripts.js";
 
+let globalCodeCall = false;
+let globalCodeAnnoucement = "";
+
 export function extensionOnly(script) {
     const extension = prompt("Extension: ");
     let newScript = script.replace('CONTACT', extension);
@@ -108,4 +111,42 @@ export function alarmFormatter() {
         let newScript = result.join('\n');
         copyingText(newScript);
     });
+}
+
+export function codes(script, id) {
+    globalCodeCall = true;
+
+    const codeType = prompt("Code Type: Code ");
+    const codeAnn = prompt("Annoucement: ");
+
+    let newScript = script.replace("CDTYP", codeType);
+    newScript = newScript.replace("CDANN", codeAnn);
+
+    if (id == "nc") {
+        const codeNom = prompt("Code Nomenclature: ");
+        newScript = newScript.replace("CDNOM", codeNom);
+        copyingText(newScript);
+    }
+
+    else if (id == "codeLine") {
+        extensionOnly(newScript);
+    }
+
+    globalCodeAnnoucement = codeAnn;
+}
+
+export function codeRemarks(script) {
+    if (globalCodeCall) {
+        let newScript = script.replace("CDANN", globalCodeAnnoucement);
+        copyingText(newScript);
+        globalCodeCall = false;
+    }
+
+    else alert("Call a Code First");
+}
+
+export function geRemarks(script) {
+    const referenceNumber = prompt("Enter Reference number: ");
+    let newScript = script.replace("RN", referenceNumber);
+    copyingText(newScript);
 }
