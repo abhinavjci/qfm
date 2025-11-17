@@ -6,7 +6,7 @@ document.querySelectorAll('.item').forEach(item => {
   item.onclick = () => { 
     const allowedExtensionOnly = ["doorAccess", "tooHot", "tooCold", "toiletClogged", "lights", "lightsDark", "aprDeactivate", "aprActivate"];
     const allowedNameOnly = ["remarksAssignedJciGen", "remarksNotifiedJciGen", "remarksTemp"];
-    const allowedExternalDepartments = ["biomed", "humberIt"];
+    const allowedExternalDepartments = ["biomed", "humberIt", "ge"];
     const allowedCodeIds = ["codeLine", "nc"];
 
     if (allowedExtensionOnly.includes(item.id)) {

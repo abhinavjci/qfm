@@ -71,9 +71,14 @@ export function externalDepartments(script, id) {
     
     let newScript = script.replace("EQUIP", equipmentType);
     newScript = newScript.replace("TOR", typeOfRequest);
-    if (id == "humberIt") {
+    if (id == "humberIt" || id == "ge") {
         const equipmentId = prompt("Equipment ID: ", "NA");
         newScript = newScript.replace("EQID", equipmentId);
+    }
+
+    if (id == "ge") {
+        const machineStatus = prompt("Machine Status: ", "Urgent | ");
+        newScript = newScript.replace("STAT", machineStatus);
     }
 
     extensionOnly(newScript);
@@ -109,6 +114,14 @@ export function alarmFormatter() {
         }
 
         let newScript = result.join('\n');
+
+        if (newScript.includes("Refrigeration")) {
+            newScript = "Fridge Alarm\n" + newScript;
+        }
+        else if (newScript.includes("Humidity")) {
+            newScript = "Humidity Alarm\n" + newScript;
+        }
+
         copyingText(newScript);
     });
 }
