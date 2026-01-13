@@ -23,12 +23,16 @@ hr {
   color: rgb(0, 255, 0);
   transition: all 0.25s ease-in;
   margin: 2px 5px;
+  border-bottom: 0.2rem solid rgb(0, 255, 0);
+  border-right: 0.2rem solid rgb(0, 172, 0);
 }
 
 .item:hover {
   cursor: pointer;
-  color: rgb(25, 25, 25);
-  background: rgb(0, 255, 0);
+}
+
+.item:active {
+  border: transparent;
 }
 
 strong {
