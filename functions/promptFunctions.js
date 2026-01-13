@@ -182,7 +182,7 @@ export function hrhItRemarks(script) {
 export function asPerRemarks() {
     const asPerWho = prompt("As per Who: ");
     navigator.clipboard.readText().then(text => {
-        const script = asPerWho + ': "'+ text + '."';
+        const script = "As per " + asPerWho + ': "'+ text + '."';
         copyingText(script);
     })
 }
