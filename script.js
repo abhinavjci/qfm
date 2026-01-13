@@ -1,5 +1,5 @@
 import copyingText from "./functions/copyingText.js";
-import { extensionOnly, nameOnly, terminalClean, trashLinen, agv, externalDepartments, alarmFormatter, codes, codeRemarks, geRemarks } from "./functions/promptFunctions.js";
+import { extensionOnly, nameOnly, terminalClean, trashLinen, agv, externalDepartments, alarmFormatter, codes, codeRemarks, geRemarks, hrhItRemarks, asPerRemarks} from "./functions/promptFunctions.js";
 import allScripts from "./functions/allScripts.js"
   
 document.querySelectorAll('.item').forEach(item => {
@@ -47,6 +47,14 @@ document.querySelectorAll('.item').forEach(item => {
     
     else if (item.id == "remarksGe") {
       geRemarks(allScripts[item.id]);
+    }
+
+    else if (item.id == "remarksHrhIt") {
+      hrhItRemarks(allScripts[item.id]);
+    }
+
+    else if (item.id == "remarksAsPer") {
+      asPerRemarks();
     }
 
     else { copyingText(allScripts[item.id]); }

@@ -163,3 +163,26 @@ export function geRemarks(script) {
     let newScript = script.replace("RN", referenceNumber);
     copyingText(newScript);
 }
+
+export function hrhItRemarks(script) {
+    let regularScript = script;
+    navigator.clipboard.readText().then(text => {
+        let textList = text.split(' ');
+        for (let i=0; i < textList.length; i++) {
+            if (textList[i].toLowerCase() == "ticket") {
+                let newScript = "HRH IT: " + text;
+                copyingText(newScript);
+                break;
+            }
+        }
+    });
+    copyingText(regularScript);
+}
+
+export function asPerRemarks() {
+    const asPerWho = prompt("As per Who: ");
+    navigator.clipboard.readText().then(text => {
+        const script = asPerWho + ': "'+ text + '."';
+        copyingText(script);
+    })
+}
