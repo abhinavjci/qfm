@@ -3,8 +3,8 @@
 }
 
 ::selection {
-  color: black;
-  background: rgb(0, 255, 0);
+  color: rgb(0, 255, 0);
+  background: black;
 }
 
 hr {
@@ -34,6 +34,7 @@ hr {
 
 .item::selection {
   background-color: transparent;
+  color: rgb(0, 255, 0);
 }
 
 .item:hover {
