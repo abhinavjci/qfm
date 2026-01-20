@@ -24,7 +24,6 @@ hr {
 }
 
 .item {
-  border-top-left-radius: 8%;
   font-size: 8px;
   font-weight: bold;
   text-transform: uppercase;
@@ -82,20 +81,24 @@ strong {
   align-items: center;
   background: rgb(25, 25, 25);
   color: rgb(0, 255, 0);
-  padding: 5px 8px;
-  margin-bottom: 4px;
-  font-size: 11px;
-  border-left: 3px solid rgb(0, 255, 0);
+  padding: 2px 6px;          /* smaller padding */
+  margin-bottom: 2px;        /* tighter spacing */
+  font-size: 10px;           /* smaller text */
+  border-left: 2px solid rgb(0, 255, 0);
 }
 
 .task-item button {
-  background: transparent;
-  border: none;
-  color: red;
-  font-weight: bold;
-  cursor: pointer;
+  font-size: 10px;
+  padding: 0 4px;
 }
 
 #taskInput {
-  margin-top: 8px;
+  padding: 4px;
+  font-size: 10px;
+  margin-top: 6px;
+}
+
+#taskList {
+  max-height: 160px;   /* adjust if needed */
+  overflow-y: auto;
 }
