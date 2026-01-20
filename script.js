@@ -60,3 +60,59 @@ document.querySelectorAll('.item').forEach(item => {
     else { copyingText(allScripts[item.id]); }
   }
 });
+
+// ===== Persistent Remarks Tasks =====
+const taskInput = document.getElementById("taskInput");
+const taskList = document.getElementById("taskList");
+
+const STORAGE_KEY = "qfm_remarks_tasks";
+
+// Load tasks on startup
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  taskList.innerHTML = "";
+  tasks.forEach((task, index) => renderTask(task, index));
+}
+
+// Save tasks
+function saveTasks(tasks) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+}
+
+// Render one task
+function renderTask(text, index) {
+  const li = document.createElement("li");
+  li.className = "task-item";
+
+  li.innerHTML = `
+    <span>${text}</span>
+    <button data-index="${index}">✕</button>
+  `;
+
+  taskList.appendChild(li);
+}
+
+// Add task on Enter
+taskInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && taskInput.value.trim() !== "") {
+    const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    tasks.unshift(taskInput.value.trim()); // add to TOP
+    saveTasks(tasks);
+    taskInput.value = "";
+    loadTasks();
+  }
+});
+
+// Delete task
+taskList.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON") {
+    const index = e.target.dataset.index;
+    const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    tasks.splice(index, 1);
+    saveTasks(tasks);
+    loadTasks();
+  }
+});
+
+// Initial load
+loadTasks();
