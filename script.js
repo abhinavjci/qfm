@@ -96,7 +96,7 @@ function renderTask(text, index) {
 taskInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && taskInput.value.trim() !== "") {
     const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-    tasks.unshift(taskInput.value.trim()); // add to TOP
+    tasks.push(taskInput.value.trim());// add to TOP
     saveTasks(tasks);
     taskInput.value = "";
     loadTasks();
