@@ -2,18 +2,25 @@
 	font-family: "Helvetica";
 }
 
+:root {
+  --color-primary: #8A0000;
+  --color-secondary: #3B060A;
+  --color-accent: #C83F12;
+  --color-white: #E0D9D9;
+}
+
 body {
   height: 90vh;
 }
 
 ::selection {
-  color: rgb(0, 255, 0);
-  background: black;
+  color: var(--color-white);
+  background: var(--color-secondary);
 }
 
 hr {
   border: 0;
-  border-top: 3px solid black;
+  border-top: 2px solid black;
 }
 
 .buttons{
@@ -27,18 +34,18 @@ hr {
   font-size: 8px;
   font-weight: bold;
   text-transform: uppercase;
-  background: rgb(25, 25, 25);
   padding: 0.25rem 0.5rem;
-  color: rgb(0, 255, 0);
-  transition: all 0.25s ease-in;
+  transition: all 0.35s ease-in;
   margin: 2px 5px;
-  border-bottom: 0.2rem solid rgb(0, 255, 0);
-  border-right: 0.2rem solid rgb(0, 172, 0);
+  background: var(--color-secondary);
+  color: var(--color-white);
+  border: 1px solid var(--color-dark);
+  border-radius: 5%;
 }
 
-.item::selection {
-  background-color: transparent;
-  color: rgb(0, 255, 0);
+.item:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
 .item:hover {
@@ -57,7 +64,7 @@ strong {
 }
 
 .task-area {
-  width: 90%;
+  width: 95%;
   margin: 10px auto;
 }
 
@@ -65,8 +72,13 @@ strong {
   width: 100%;
   padding: 6px;
   font-size: 12px;
-  border: 2px solid black;
+  border: 2px solid var(--color-primary);
   outline: none;
+  resize: none;
+  min-width: 97%;
+  max-width: 97%;
+  height: 5rem;
+  margin: 0 auto;
 }
 
 #taskList {
@@ -77,19 +89,20 @@ strong {
 
 .task-item {
   display: flex;
+  border-radius: 1%;
   justify-content: space-between;
   align-items: center;
-  background: rgb(25, 25, 25);
-  color: rgb(0, 255, 0);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-weight: bold;
+  text-transform: uppercase;
   padding: 2px 6px;          /* smaller padding */
   margin-bottom: 2px;        /* tighter spacing */
   font-size: 10px;           /* smaller text */
-  border-left: 2px solid rgb(0, 255, 0);
 }
 
 .task-item button {
   font-size: 10px;
-  padding: 0 4px;
   cursor: pointer;
 }
 
