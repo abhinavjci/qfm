@@ -12,6 +12,7 @@
 body {
   height: 90vh;
   padding-bottom: 8.5rem; /* EXTRA space so last task never hides */
+
 }
 
 ::selection {
@@ -64,18 +65,20 @@ strong {
 
 #taskInput {
   position: fixed;
-  bottom: 1px;              /* sticks to bottom */
-  left: 2.5%;                /* same margin as task-area (95% width) */
-  width: 89%;                /* matches list width */
+  bottom: 3px;              /* sticks to bottom */
+  left: 2.75%;               /* same margin as task-area (95% width) */
+  width: 89%;           
   padding: 8px;
   font-size: 10px;
   border: 2px solid var(--color-primary);
   outline: none;
   resize: none;
-  height: 5rem;
+  height: 3rem;
   background: white;
   z-index: 10;
   border-radius: 4px;
+  font-weight: bold;
+  margin: auto;
 }
 
 
@@ -114,7 +117,7 @@ strong {
 }
 
 .task-time {
-  font-size: 8px;
+  font-size: 7px;
   opacity: 0.8;
 }
 
