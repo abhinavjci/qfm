@@ -90,8 +90,17 @@ taskInput.addEventListener("keydown", (e) => {
     const now = new Date().toLocaleString("en-GB", { hour12: false });
     tasks.push({ text: taskInput.value, time: now });
     saveTasks(tasks);
-    taskInput.value = "";
+
+    // render FIRST (critical)
     loadTasks();
+
+    // reset textarea AFTER render
+    taskInput.value = "";
+    taskInput.blur();
+    requestAnimationFrame(() => {
+      taskInput.focus();
+      taskInput.scrollTop = 0;
+    });
   }
 });
 
