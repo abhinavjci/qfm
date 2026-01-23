@@ -107,6 +107,11 @@ strong {
 .task-text {
   white-space: pre-wrap;
   cursor: text;
+  outline: none;
+}
+
+.task-text:focus {
+  border: 1px dotted white;
 }
 
 .task-meta {
