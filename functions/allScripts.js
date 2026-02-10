@@ -22,7 +22,7 @@ const allScripts = {
 	ge: "Caller is requesting service for the GE equipment(s) at the given location. Details are as below:\nEquipment Type: EQUIP\nEquipment ID: EQID\nProblem/Issue: TOR\nMachine Status: STAT\nContact: CONTACT",
 
 	// Remarks
-	remarksCode: "Code was announced overhead twice as, 'Code CDANN'.",
+	remarksCode: "Code was announced overhead twice as, 'CDANN'.",
 	remarksSupportServices: "Event assigned to Support Services",
 	remarksSecurity: "Event assigned to Security Department.",
 	remarksHrhIt: "Event assigned to HRH IT.",
